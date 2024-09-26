@@ -13,7 +13,9 @@ import {
   ListItemText,
   Menu,
   MenuItem,
+  Stack,
   Typography,
+  useMediaQuery,
   useTheme,
 } from "@mui/material";
 import { useState } from "react";
@@ -25,6 +27,7 @@ import VideoLabelIcon from "@mui/icons-material/VideoLabel";
 import MenuBookIcon from "@mui/icons-material/MenuBook";
 import SportsEsportsIcon from "@mui/icons-material/SportsEsports";
 import { Close, ExpandMore } from "@mui/icons-material";
+import Links from "./Links";
 
 // ____________________________________________________________________________________________
 const Header_3 = () => {
@@ -43,7 +46,7 @@ const Header_3 = () => {
   //   Drawar :----------------------------
   const [state, setState] = useState({
     top: false,
-    left: true,
+    left: false,
     bottom: false,
     right: false,
   });
@@ -61,7 +64,7 @@ const Header_3 = () => {
 
   // ____________________________________________________________________________________________
   return (
-    <div>
+    <div  >
       <Container
         sx={{
           display: "flex",
@@ -79,7 +82,7 @@ const Header_3 = () => {
             onClick={handleClick}
             // @ts-ignore
             sx={{
-              width: "200px",
+              width: { xs: "150px", sm: "200px" },
               // @ts-ignore
               bgcolor: theme.palette.myColor.main,
               color: theme.palette.text.primary,
@@ -155,10 +158,23 @@ const Header_3 = () => {
           </Menu>
         </Box>
 
+        {useMediaQuery("(min-width:1100px)") && (
+          <Stack direction={"row"} gap={3} sx={{}}>
+            <Links title={"Home"} />
+            <Links title={"Mega Menu"} />
+            <Links title={"Full Screen Menu"} />
+            <Links title={"pages"} />
+            <Links title={"User Account"} />
+            <Links title={"Vendor Account"} />
+          </Stack>
+        )}
+
         {/*  Right :----------------------------------------------------------------------- */}
-        <IconButton onClick={toggleDrawer("left", true)}>
-          <MenuIcon />
-        </IconButton>
+        {useMediaQuery("(max-width:1100px)") && (
+          <IconButton onClick={toggleDrawer("left", true)}>
+            <MenuIcon />
+          </IconButton>
+        )}
 
         <Drawer
           anchor={"left"}
@@ -179,7 +195,16 @@ const Header_3 = () => {
           >
             <IconButton
               onClick={toggleDrawer("left", false)}
-              sx={{ position: "absolute", top: "10px", right: "20px" }}
+              sx={{
+                position: "absolute",
+                top: "10px",
+                right: "20px",
+                ":hover": {
+                  color: "red",
+                  rotate: "180deg",
+                  transition: "0.3s",
+                },
+              }}
             >
               <Close />
             </IconButton>

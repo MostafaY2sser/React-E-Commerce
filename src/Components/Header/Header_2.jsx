@@ -1,7 +1,6 @@
 import {
   ExpandMore,
   ShoppingCart,
-  ShoppingCartOutlined,
 } from "@mui/icons-material";
 import {
   Box,
@@ -108,18 +107,18 @@ const Header_2 = () => {
   
   // ____________________________________________________________________________________________________________________
   return (
-    <div>
+    <div   >
       <Container
-        sx={{
-          my: 3,
+        sx={{  
+          my: 1,
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
         }}
       >
         <Stack alignItems={"center"}>
-          <ShoppingCartOutlined />
-          <Typography variant="body2">E-Commerce</Typography>
+          <Typography variant="body2"><img  style={{width:"100%"}} src="/public/images/logo.svg"/></Typography>
+            
         </Stack>
 
         {/*  Search --------------  */}
@@ -129,9 +128,12 @@ const Header_2 = () => {
             borderRadius: "50px",
             display: "flex",
             justifyContent: "space-between",
+            alignItems:"center",
             overflow: "hidden",
             border: "1px solid  #777",
-            // minWidth:"300px"
+            // minWidth:"300px",
+            height:{xs:"30px" , sm:"45px"} ,
+            ml:{xs:"35px" ,sm:0},
           }}
         >
           <SearchIconWrapper>
@@ -140,6 +142,7 @@ const Header_2 = () => {
           <StyledInputBase
             placeholder="Search…"
             inputProps={{ "aria-label": "search" }}
+            sx={{fontSize:{xs:"12px" , sm:"16px"}}}
           />
           <Box>
             <List
@@ -160,13 +163,13 @@ const Header_2 = () => {
                 aria-label="when device is locked"
                 aria-expanded={open ? "true" : undefined}
                 onClick={handleClickListItem}
-                sx={{ width: "151px" }}
+                sx={{ width:{xs:"120px" , sm:"151px"}}}
               >
                 <ListItemText
                   secondary={options[selectedIndex]}
-                  sx={{ textAlign:"center" }}
+                  sx={{ textAlign:{xs:"start", sm:"center"}, ".MuiTypography-root":{fontSize:{xs:"11px" , sm:"14px"}}}}
                 />
-                <ExpandMore />
+                <ExpandMore  sx={{mr:"-10px" , fontSize:{xs:"20px" , sm:"26px"}}} />
               </ListItem>
             </List>
             <Menu
@@ -195,7 +198,7 @@ const Header_2 = () => {
 
         <Box sx={{ display: "flex", alignItems: "center" }}>
           <IconButton>
-            <Person2OutlinedIcon />
+            <Person2OutlinedIcon  sx={{mr:{xs:"-13px" , sm:"0"}}}/>
           </IconButton>
           <IconButton>
             <StyledBadge badgeContent={4} color="error">
