@@ -7,25 +7,21 @@ import { Pagination } from "swiper/modules";
 import "./styles.css";
 import IconSection from "./IconSection";
 
-
-
 //  Array For  Slider :------------
 const arrayForSlider = [
-    { text: "MEN", img: "/public/images/hero-1.jpg" },
-    { text: "WOMAN", img: "/public/images/hero-2.jpg" },
+  { text: "MEN", img: "/public/images/hero-1.jpg" },
+  { text: "WOMAN", img: "/public/images/hero-2.jpg" },
 ];
 
 // ____________________________________________________________________________________________________________________________________
 const Hero = () => {
-
-
   // ____________________________________________________________________________________________________________________________________
   return (
-    <Box   >
+    <Box>
       <Container
         sx={{
           mt: 3,
-          pt:3,
+          pt: 3,
           display: "flex",
           flexDirection: { xs: "column", md: "row" },
           gap: 1,
@@ -251,7 +247,7 @@ const Hero = () => {
                   transition: "0.2s",
                   fontSize: { xs: "12px", sm: "18px" },
                   bgcolor: "white",
-                  width:{xs:"100%",sm:"90%"},
+                  width: { xs: "100%", sm: "90%" },
                   px: "5px",
                   borderRadius: 1,
                   "&:hover": {
@@ -268,10 +264,8 @@ const Hero = () => {
           </Box>
         </Box>
       </Container>
-      <IconSection/>
+      <IconSection />
     </Box>
-
-
   );
 };
 

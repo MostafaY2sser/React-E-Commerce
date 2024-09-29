@@ -1,7 +1,4 @@
-import {
-  ExpandMore,
-  ShoppingCart,
-} from "@mui/icons-material";
+import { ExpandMore, ShoppingCart } from "@mui/icons-material";
 import {
   Box,
   Container,
@@ -20,8 +17,6 @@ import { styled, useTheme } from "@mui/material/styles";
 import Person2OutlinedIcon from "@mui/icons-material/Person2Outlined";
 import Badge from "@mui/material/Badge";
 import { useState } from "react";
-
-
 
 // Search Input :-------------------------------------
 const Search = styled("div")(({ theme }) => ({
@@ -64,8 +59,6 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-
-
 //   Shopping  Icon  :----------------------------------
 const StyledBadge = styled(Badge)(({ theme }) => ({
   "& .MuiBadge-badge": {
@@ -76,11 +69,8 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
   },
 }));
 
-
 //  Selected List  For Search :----------
 const options = ["All Categorries", "Car", "Clothes", "Electronics"];
-
-
 
 // _________________________________________________________________________________________________________________
 const Header_2 = () => {
@@ -102,14 +92,11 @@ const Header_2 = () => {
     setAnchorEl(null);
   };
 
-
-
-  
   // ____________________________________________________________________________________________________________________
   return (
-    <div   >
+    <div>
       <Container
-        sx={{  
+        sx={{
           my: 1,
           display: "flex",
           alignItems: "center",
@@ -117,8 +104,9 @@ const Header_2 = () => {
         }}
       >
         <Stack alignItems={"center"}>
-          <Typography variant="body2"><img  style={{width:"100%"}} src="/public/images/logo.svg"/></Typography>
-            
+          <Typography variant="body2">
+            <img style={{ width: "100%" }} src="/public/images/logo.svg" />
+          </Typography>
         </Stack>
 
         {/*  Search --------------  */}
@@ -128,12 +116,12 @@ const Header_2 = () => {
             borderRadius: "50px",
             display: "flex",
             justifyContent: "space-between",
-            alignItems:"center",
+            alignItems: "center",
             overflow: "hidden",
             border: "1px solid  #777",
             // minWidth:"300px",
-            height:{xs:"30px" , sm:"45px"} ,
-            ml:{xs:"35px" ,sm:0},
+            height: { xs: "30px", sm: "45px" },
+            ml: { xs: "35px", sm: 0 },
           }}
         >
           <SearchIconWrapper>
@@ -142,7 +130,7 @@ const Header_2 = () => {
           <StyledInputBase
             placeholder="Search…"
             inputProps={{ "aria-label": "search" }}
-            sx={{fontSize:{xs:"12px" , sm:"16px"}}}
+            sx={{ fontSize: { xs: "12px", sm: "16px" } }}
           />
           <Box>
             <List
@@ -163,13 +151,20 @@ const Header_2 = () => {
                 aria-label="when device is locked"
                 aria-expanded={open ? "true" : undefined}
                 onClick={handleClickListItem}
-                sx={{ width:{xs:"120px" , sm:"151px"}}}
+                sx={{ width: { xs: "120px", sm: "151px" } }}
               >
                 <ListItemText
                   secondary={options[selectedIndex]}
-                  sx={{ textAlign:{xs:"start", sm:"center"}, ".MuiTypography-root":{fontSize:{xs:"11px" , sm:"14px"}}}}
+                  sx={{
+                    textAlign: { xs: "start", sm: "center" },
+                    ".MuiTypography-root": {
+                      fontSize: { xs: "11px", sm: "14px" },
+                    },
+                  }}
                 />
-                <ExpandMore  sx={{mr:"-10px" , fontSize:{xs:"20px" , sm:"26px"}}} />
+                <ExpandMore
+                  sx={{ mr: "-10px", fontSize: { xs: "20px", sm: "26px" } }}
+                />
               </ListItem>
             </List>
             <Menu
@@ -198,7 +193,7 @@ const Header_2 = () => {
 
         <Box sx={{ display: "flex", alignItems: "center" }}>
           <IconButton>
-            <Person2OutlinedIcon  sx={{mr:{xs:"-13px" , sm:"0"}}}/>
+            <Person2OutlinedIcon sx={{ mr: { xs: "-13px", sm: "0" } }} />
           </IconButton>
           <IconButton>
             <StyledBadge badgeContent={4} color="error">

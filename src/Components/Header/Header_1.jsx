@@ -50,14 +50,14 @@ const Header_1 = () => {
 
   // ___________________________________________________________________________________________________
   return (
-    <Box  
+    <Box
       sx={{
         bgcolor: "#2B3445",
         borderBottomRightRadius: 6,
         borderBottomLeftRadius: 6,
       }}
     >
-      <Container >
+      <Container>
         <Stack direction={"row"} alignItems={"center"}>
           <Typography
             sx={{
@@ -79,7 +79,7 @@ const Header_1 = () => {
               fontSize: "12px",
               fontWeight: 300,
               color: "#fff",
-              ml:{xs:"-12px" , sm:"0"}
+              ml: { xs: "-12px", sm: "0" },
             }}
             variant="body2"
           >
@@ -123,7 +123,7 @@ const Header_1 = () => {
           <List
             component="nav"
             aria-label="Device settings"
-            sx={{ p: "0", m: "0" ,cursor:"pointer" }}
+            sx={{ p: "0", m: "0", cursor: "pointer" }}
           >
             <ListItem
               id="lock-button"
@@ -132,7 +132,7 @@ const Header_1 = () => {
               aria-label="when device is locked"
               aria-expanded={open ? "true" : undefined}
               onClick={handleClickListItem}
-              sx={{ px:{xs:0 ,sm:1} }}
+              sx={{ px: { xs: 0, sm: 1 } }}
             >
               <ListItemText
                 secondary={options[selectedIndex]}

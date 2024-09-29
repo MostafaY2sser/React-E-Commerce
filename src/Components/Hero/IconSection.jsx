@@ -6,21 +6,20 @@ import AccessAlarmOutlinedIcon from "@mui/icons-material/AccessAlarmOutlined";
 import { useTheme } from "@emotion/react";
 
 const IconSection = () => {
-
-    const theme = useTheme()
+  const theme = useTheme();
 
   return (
-    <Container  data-aos="zoom-in-up" >
-      <Stack 
+    <Container data-aos="zoom-in-up">
+      <Stack
         direction={"row"}
         gap={1.5}
         sx={{
-          mt:2,
+          mt: 2,
           py: 3,
           flexWrap: "wrap",
           justifyContent: "space-between",
           width: "100%",
-          bgcolor: theme.palette.bgIcon.main
+          bgcolor: theme.palette.bgIcon.main,
         }}
       >
         <MyBox
@@ -59,7 +58,7 @@ const MyBox = ({ icon: MyIcon, title, subTitle }) => {
       sx={{
         display: "flex",
         alignItems: "center",
-        justifyContent:{xs:"flex-start", sm:"center"},
+        justifyContent: { xs: "flex-start", sm: "center" },
         gap: 2,
         width: { xs: "48%", md: "24%" },
       }}
